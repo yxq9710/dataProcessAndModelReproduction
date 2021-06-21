@@ -1,0 +1,18 @@
+
+待处理的两个文本文件的编码为ISO-8859-1
+
+收获：
+1.以后处理文件编码的问题时，如果报错，原因90%是encoding 或者 decoding的格式不一致
+    解决方案：在pycharm的文件中，通过不断地更改编码方式进行测试，直到找到正确的编码
+2. 用for循环一步步的写要比列表生成式的方式处理速度快一些
+3. 使用LearningRateSchedule或者ReduceLROnPlateau在callbacks时回调学习率：
+    LearningRateSchedule 使用的是静态学习率（提前设置好学习率随epoch变化的函数）
+    ReduceLROnPlateau    使用的是动态学习率(判断指标值不变好，在减小学习率)
+    实际效果时：动态的更加适应模型
+
+注：有两个vocab文件，其中vocab_nltk.txt为nltk分词工具做的， vocab.txt为自己手动做的
+    vocab文件的词表变化过程：
+        1. 自己手写    2. 使用nltk  3. 2+re   4. 3+去除停用词     5. 4+词性还原        6. 4+词干提取
+          23908         22614      20642        20496             18462               14073
+
+
